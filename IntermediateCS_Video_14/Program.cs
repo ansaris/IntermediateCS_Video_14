@@ -40,10 +40,17 @@ class MethodExample
 }
 
 
-    class Program
+class Program
+{
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-        }
+        var example = new MethodExample();
+
+        example.OptionalArgumentMethod();
+        example.OptionalArgumentMethod(12);
+        example.OptionalArgumentMethod(y: "Goodbye");
+
+        // example.ParamsMethod("required", "one", "two");
     }
+}
 
