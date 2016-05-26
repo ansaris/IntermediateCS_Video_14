@@ -36,14 +36,35 @@ class MethodExample
 
     // Optional arguments must come at the end
 
+    // C# has always had "params" methods -- Console.WriteLine is an example.
+
+    public void ParamsMethod(string required, params string[] extras)
+    {
+        if (extras == null)
+            throw new ArgumentNullException(nameof(extras));
+        Console.WriteLine(required);
+        foreach (var extra in extras)
+            Console.WriteLine(extra);
+    }
+
 
 }
 
 
-    class Program
+class Program
+{
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-        }
+        var example = new MethodExample();
+
+        example.OptionalArgumentMethod();
+        example.OptionalArgumentMethod(12);
+        example.OptionalArgumentMethod(y: "Goodbye");
+
+        example.ParamsMethod("required", "one", "two");
+
+        // This is the same as
     }
+        
+}
 
