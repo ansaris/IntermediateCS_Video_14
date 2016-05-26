@@ -16,10 +16,27 @@ class MethodExample
     }
 
     // Method useful for value
-    public int Add(int x)
+    //public int Add(int x)
+    //{
+    //    return x + this.number;
+    //}
+
+    // C# 6.0 adds this new concise syntax for very 
+    // simple methods:
+
+    public int Add(int x) => x + this.number;
+
+    // C# 4.0 added the ability to make arguments optional
+    // but this technique sparingly
+
+    public void OptionalArgumentMethod(int x = 10, string y = "Hello")
     {
-        return x + this.number;
+        Console.WriteLine($"{x} {y} {this.number}");
     }
+
+    // Optional arguments must come at the end
+
+
 }
 
 
