@@ -68,6 +68,8 @@ class Program
         example.ParamsMethod("required", new string[] { "one", "two" });
 
         // What do you think this does?
+
+        example.ParamsMethod("required");
     }
         
 }
